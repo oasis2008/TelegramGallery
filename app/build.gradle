@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '23.0.3'
+    compileSdkVersion 31
+
 
     defaultConfig {
         applicationId "com.tangxiaolv.telegramgallery.app"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -17,11 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    ndkVersion '21.0.6113669'
 }
 
 dependencies {
+    implementation project(path: ':telegramgallery')
     compile 'com.android.support:appcompat-v7:23.3.0'
-//    compile project(':telegramgallery')
-    debugCompile project(path:':telegramgallery',configuration:'debug')
-    releaseCompile project(path:':telegramgallery',configuration: 'release')
+
 }
